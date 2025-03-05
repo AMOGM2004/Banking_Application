@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish Animated Login Form</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+
+    }
+
+    body {
+      padding-top: 80px;
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #e3f2fd;
+      /* Light blue background */
+      overflow: hidden;
+    }
+
+    .login-container {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      animation: containerFloat 3s ease-in-out infinite alternate;
+      /* Floating animation */
+    }
+
+    @keyframes containerFloat {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(-20px);
+        /* Float up */
+      }
+    }
+
+    .login-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .login-header h1 {
+      color: #007BFF;
+      /* Header color */
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #007BFF;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      background-color: #f9f9f9;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #0056b3;
+    }
+
+    .input-group label {
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      transform: translateY(-50%);
+      font-size: 1rem;
+      color: #666;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      background-color: transparent;
+      padding: 0 5px;
+    }
+
+    .input-group input:focus+label,
+    .input-group input:not(:placeholder-shown)+label {
+      top: 0;
+      font-size: 0.8rem;
+      color: #007BFF;
+      background-color: #ffffff;
+    }
+
+    .login-button {
+      width: 50%;
+      padding: 8px;
+      /* Smaller padding */
+      background: #007BFF;
+      /* Button background color */
+      color: white;
+      border: none;
+      border-radius: 50px;
+      /* Ellipse shape */
+      font-size: 0.9rem;
+      /* Smaller font size */
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      /* Added transform transition */
+      display: block;
+      /* Block display for centering */
+      margin: 0 auto;
+      /* Centering */
+    }
+
+    .login-button:hover {
+      background: #0056b3;
+      /* Darker button on hover */
+      transform: scale(1.05);
+      /* Scale effect on hover */
+    }
+
+    .login-button:active {
+      transform: scale(0.95);
+      /* Slight shrink on click */
+    }
+
+    .login-button:focus {
+      outline: none;
+      box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+      /* Focus shadow */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      /* Space between flex boxes */
+    }
+
+    .flex-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 30px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      /* Change cursor to pointer when hovering over the box */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* Smooth transition for hover effects */
+    }
+
+    .flex-box:hover {
+      transform: translateY(-10px);
+      /* Lift the box up slightly */
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      /* More prominent shadow when hovering */
+    }
+
+    .flex-box h2 {
+      font-size: 24px;
+      color: #333333;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+      /* Smooth transition for title color */
+    }
+
+    .flex-box p {
+      font-size: 14px;
+      color: #777777;
+      text-align: center;
+    }
+
+    .flex-box:nth-child(1) {
+      background-color: #e1f7d5;
+      /* Light green for new account */
+    }
+
+    .flex-box:nth-child(2) {
+      background-color: #e6f0ff;
+      /* Light blue for accountant transactions */
+    }
+
+    /* Title hover effect */
+    .flex-box:hover h2 {
+      color: #007bff;
+      /* Change the title color to blue when hovering over the flexbox */
+    }
+
+    .one {
+      margin-top: 10px;
+
+    }
+
+
+
+
+
+
+
+
+
+
+    /* Style the dropdown button */
+    .dropbtn {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 15px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .dropbtn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    /* Show the dropdown on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+    @media (max-width: 600px) {
+      .container {
+        flex-direction: column;
+        /* Stack boxes on small screens */
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="nav">
+    <nav class="section__container nav__container">
+      <div class="nav__logo">Finova<span>Bank</span></div>
+      <ul class="nav__links">
+        <li class="link"><a href="index.html">Home</a></li>
+        <li class="link"><a href="#">About Us</a></li>
+        <li class="link"><a href="register.php">User</a></li>
+        <li class="link"><a href="manager_login.php">Accountant</a></li>
+        <li class="link"><a href="manager_login.php">Manager</a></li>
+
+      </ul>
+      <div class="dropdown">
+
+        <a href="#"><button class="btn"><b>Notifications</b></button></a>
+
+        <div class="dropdown-content">
+          <a href="clerk_notifications.php"><b>Acknowledgements</b></a>
+          <a href="view.php"><b>Token Requested</b></a>
+          <a href="manager_login.php"><b>Logout</b></a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+
+
+
+
+  <div class="container">
+
+    <div class="flex-box">
+      <a href="create_account.php">
+        <center>
+          <h2>Create a New Account</h2>
+        </center>
+
+    </div></a>
+    <div class="flex-box">
+      <a href="clerk_services.html">
+        <center>
+          <h2>Accountant Transactions</h2>
+        </center>
+    </div></a>
+  </div>
+
+
+
+
+</body>
+
+</html>

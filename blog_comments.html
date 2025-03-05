@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Section</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body >
+
+    <header>
+        <nav class="section__container nav__container">
+          <div class="nav__logo">Health<span>Care</span></div>
+          <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="#">About Us</a></li>
+            <li class="link"><a href="register.php">User</a></li>
+            <li class="link"><a href="manager_login.php">Accountant</a></li>
+            <li class="link"><a href="manager_login.php">Manager</a></li>
+            
+          </ul>
+         <a href="blog_comments.html" ><button class="btn">Feedback</button></a>
+        </nav>
+        </header>
+    <h1 style="text-align: center; margin: 20px 0; color: #333;">Feedback Section</h1>
+    <form action="submit_comment.php" method="post" style="max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);">
+        <input type="text" name="name" placeholder="Enter your name" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px;">
+        <textarea name="comment" placeholder="Write your comment" rows="5" required style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; resize: vertical;"></textarea>
+        <button type="submit" style="background-color: #007BFF; color: white; border: none; border-radius: 5px; padding: 10px; cursor: pointer; font-size: 16px;">Submit</button>
+    </form>
+    
+    <div class="comments" style="margin-top: 20px; max-width: 600px; margin: 20px auto;">
+       
+    </div>
+
+</body>
+</html>

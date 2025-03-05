@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking System</title>
+    <style>
+        body {
+            padding-top:80px;
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #dee2e6;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        td {
+            background-color: #ffffff;
+        }
+
+        td:hover {
+            background-color: #f1f1f1;
+        }
+
+        .success-message {
+            color: #28a745;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .error-message {
+            color: #dc3545;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+        .down{
+            margin-top:130px;
+        }
+
+        .nav{
+            position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+        }
+        .down{
+            margin-top:95px;
+
+        }
+    </style>
+    <script>
+        // Toggle the visibility of amount field based on transaction type
+        function toggleFields() {
+            const transactionType = document.getElementById("transaction_type").value;
+            const amountField = document.getElementById("amount_fields");
+            amountField.style.display = (transactionType === "check_balance" || transactionType === "transaction_history") ? "none" : "block";
+        }
+
+        // Show the form when the user wants to enter a new transaction
+        function showForm() {
+            // Reload the page
+            location.reload();
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="nav">
+        <nav class="section__container nav__container">
+          <div class="nav__logo">Finova<span>Bank</span></div>
+          <ul class="nav__links">
+            <li class="link"><a href="index.html">Home</a></li>
+            <li class="link"><a href="#">About Us</a></li>
+            <li class="link"><a href="register.php">User</a></li>
+            <li class="link"><a href="manager_login.php">Accountant</a></li>
+            <li class="link"><a href="manager_login.php">Manager</a></li>
+            
+          </ul>
+      <a href="clerk_services_main.html">  <button class="btn"><b>Back</b></button></a>
+        </nav>
+      </header>
+  
+    <div class="container down">
+        <h1 >Banking System</h1>
+
+        <?php if ($message || $transaction_table) : ?>
+            <div id="transaction_result" style="display: block;">
+                <div class="<?= strpos($message, 'successful') !== false ? 'success-message' : 'error-message' ?>">
+                    <?= htmlspecialchars($message) ?>
+                </div>
+
+                <?php if ($transaction_table) : ?>
+                    <?= $transaction_table ?>
+                <?php endif; ?>
+
+            </div>
+        <?php else : ?>
+            <form action="process.php" method="POST" id="transaction_form" style="display: block;">
+                <label for="transaction_type">Transaction Type:</label>
+                <select id="transaction_type" name="transaction_type" onchange="toggleFields()" required>
+                    <option value="">Select</option>
+                    <option value="withdraw">Withdraw</option>
+                    <option value="deposit">Deposit</option>
+                    <option value="check_balance">Check Balance</option>
+                    <option value="transaction_history">Transaction History</option>
+                </select>
+
+                <div>
+                    <label for="full_name">Full Name:</label>
+                    <input type="text" id="full_name" name="full_name" required>
+                </div>
+
+                <div>
+                    <label for="account_number">Account Number:</label>
+                    <input type="text" id="account_number" name="account_number" required>
+                </div>
+
+                <div id="amount_fields" style="display: none;">
+                    <label for="amount">Amount:</label>
+                    <input type="number" id="amount" name="amount">
+                </div>
+
+                <button type="submit" id="submit_button">Submit</button>
+            </form>
+        <?php endif; ?>
+    </div>
+</body>
+</html>
